@@ -1,50 +1,55 @@
 
+import React from "react";
+import Image from "next/image";
 
-import Link from "next/link";
+function Home() {
+  return (
+    <div className="h-screen bg-white">
+      {/* Header Section */}
+      <header className="bg-[#A29875] h-auto w-full text-[#FFFFFF] flex flex-col md:flex-row justify-between items-center px-4 md:px-9 py-4 space-y-4 md:space-y-0">
+      <h1 className="text-white font-rye font-bold text-3xl md:text-5xl lg:text-[60px] pt-2 md:pt-0">
+        MANZZARI
+      </h1>
+      </header>
 
-export default function Nav() {
-    return (
-        <>
-            <header className="text-gray-600 body-font">
-                <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                    <a className="flex titlefont font-medium items-center text-gray-900 mb-4 md:mb-0">
-                        <img
-                            src="https://cdn.vectorstock.com/i/preview-1x/97/01/gsn-letter-logo-design-simple-and-modern-vector-48509701.jpg"
-                            alt="Golden Stitch Nation logo"
-                            className="w-10 h-10 rounded-full"
-                        />
-                        <span className="ml-3 text-xl">Golden Stitch Nation</span>
-                    </a>
-                    <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 border flex flex-wrap items-center text-base justify-center">
-                        <Link className="mr-5 hover:text-blue-900" href="/">Home</Link>
-                        <Link className="mr-5 hover:text-blue-900" href="/aboutus">About Us</Link>
-                        <Link className="mr-5 hover:text-blue-900" href="/contactus">Contact Us</Link>
-                        <Link className="mr-5 hover:text-blue-900" href="/privacypolicy">Privacy Policy</Link>
-                    </nav>
-                    <div className="flex space-x-4 mt-4 md:mt-0">
-                        <button className="inline-flex items-center bg-yellow-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded text-base" aria-label="Sign In">
-                            Sign In
-                        </button>
-                        <button className="inline-flex items-center bg-orange-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded text-base" aria-label="Sign Up">
-                            Sign Up
-                        </button>
-                    </div>
-                </div>
-            </header>
+      {/* Main Content Section */}
+      <div className="flex flex-col items-center lg:flex-row lg:items-start justify-center lg:justify-between px-6 lg:px-16 h-full">
+        {/* Left Section (Text Content) */}
+        <div className="flex flex-col items-center lg:items-start w-full lg:w-1/2 space-y-4 mt-10 lg:mt-0">
+          <div className="font-libre-bodoni text-[40px] font-bold leading-[65.8px] tracking-[0.025em] text-left">
+            <h1>IMPECCABLE</h1>
+            <h1>CRAFTSMANSHIP AND</h1>
+            <h1>FINESSE</h1>
+          </div>
 
-            <footer className="w-full mt-[15rem] bg-gray-60 py-5 text-center">
-    <div className="container mx-auto">
-        <p className="text-gray-600">© {new Date().getFullYear()} Golden Stitch Nation. All rights reserved.</p>
-        <div className="flex justify-center space-x-6 mt-2">
-            <Link className="text-gray-600 hover:text-blue-600" href="/privacypolicy">Privacy Policy</Link>
-            <Link className="text-gray-600 hover:text-blue-600" href="/terms">Terms of Service</Link>
+          <p className="font-libre-bodoni text-[#787054] text-[20px] leading-[30px] font-medium tracking-[0.025em] text-left max-w-[550px] lg:max-w-[902px]">
+            An example of intricate workmanship and detail, elegant necklaces and
+            long and short chains form a part of our desirable collection.
+          </p>
+
+          <button className="font-libre-bodoni mt-8 lg:mt-10 text-white bg-[#A29875] w-[200px] md:w-[250px] lg:w-[288px] rounded-lg hover:bg-stone-400">
+            Explore Now
+          </button>
         </div>
+
+        {/* Right Section (Image with Custom Styles) */}
+        <div className="relative mt-10 lg:mt-0" style={{ top: "28px", left: "24px" }}>
+          <div
+            className="absolute w-full h-full bg-white opacity-30 border border-white"
+            style={{ borderRadius: "150px 0px 150px 0px" }}
+          ></div>
+          <Image
+            src="/figma-pic.jpg"
+            alt="Jewelry Image"
+            width={442}
+            height={611}
+            className="relative z-20"
+            style={{ borderRadius: "150px 0px 150px 0px", border: "1px solid #FFFFFF" }}
+          />
+        </div>
+      </div>
     </div>
-</footer>
-        </>
-    );
+  );
 }
 
-
-
-
+export default Home;
